@@ -36,8 +36,10 @@ function attachEvents() {
         const spanWrapper = document.createElement('span');
         spanWrapper.classList.add('condition');
 
+        
         const locationNameSpan = createForecastDataSpanElementWithTextContent(today.name);
-        const highLowSpan = createForecastDataSpanElementWithTextContent(`${today.forecast.high}/${today.forecast.low}`);
+        const highLowText = `${today.forecast.low}${wheaterSymbol.Degrees}/${today.forecast.high}${wheaterSymbol.Degrees}`
+        const highLowSpan = createForecastDataSpanElementWithTextContent(highLowText);
         const conditionSpan = createForecastDataSpanElementWithTextContent(today.forecast.condition);
 
         spanWrapper.append(...[locationNameSpan, highLowSpan, conditionSpan]);
@@ -54,7 +56,8 @@ function attachEvents() {
             symbolSpanElement.classList.add('symbol');
             symbolSpanElement.textContent = wheaterSymbol[upcomingDayForecast.condition];
 
-            const highLowSpanElement = createForecastDataSpanElementWithTextContent(`${upcomingDayForecast.high}/${upcomingDayForecast.low}`);
+            const highLowText = `${upcomingDayForecast.low}${wheaterSymbol.Degrees}/${upcomingDayForecast.high}${wheaterSymbol.Degrees}`
+            const highLowSpanElement = createForecastDataSpanElementWithTextContent();
             const conditionSpanElement = createForecastDataSpanElementWithTextContent(upcomingDayForecast.condition);
 
             upcomingForecastSpanWrapper.append(...[symbolSpanElement, highLowSpanElement, conditionSpanElement])
