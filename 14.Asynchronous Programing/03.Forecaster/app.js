@@ -57,7 +57,7 @@ function attachEvents() {
             symbolSpanElement.textContent = wheaterSymbol[upcomingDayForecast.condition];
 
             const highLowText = `${upcomingDayForecast.low}${wheaterSymbol.Degrees}/${upcomingDayForecast.high}${wheaterSymbol.Degrees}`
-            const highLowSpanElement = createForecastDataSpanElementWithTextContent();
+            const highLowSpanElement = createForecastDataSpanElementWithTextContent(highLowText);
             const conditionSpanElement = createForecastDataSpanElementWithTextContent(upcomingDayForecast.condition);
 
             upcomingForecastSpanWrapper.append(...[symbolSpanElement, highLowSpanElement, conditionSpanElement])
